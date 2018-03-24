@@ -23,7 +23,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Provides the appropriate {@link Fragment} for a view pager.
  */
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String tabTitles[] = new String[] { "Weather", "Main Menu","News" };
+    private String tabTitles[] = new String[] { "News", "Main Menu" };
     public SimpleFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -32,16 +32,14 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 1) {
             return new MainFragment();
-        } else if (position == 0){
-            return new WeatherFragment();
-        } else {
+        }  else {
             return new NewsFragment();
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 
     @Override

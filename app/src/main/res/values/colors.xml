@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4A312A</color>
-    <color name="colorPrimaryDark">#2F1D1A</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">@android:color/transparent</color>
     <color name="colorTintedBackground">#cdcdcd</color>
+    <color name="splashBackground">#607d8b</color>
+
+    <color name="text_light">#ffffff</color>
+    <color name="text_dark">#000000</color>
+    <color name="tab_indicator">#ffffff</color>
+
 
     <color name="refresh">#008000</color>
     <color name="refresh1">#008080</color>
     <color name="refresh2">#800080</color>
 
 
-    <color name="contact_name">#333333</color>
-    <color name="contact_number">#8c8c8c</color>
+
+
     <color name="darkTheme_colorPrimary">#2196F3</color>
     <color name="darkTheme_colorPrimaryDark">#1E88E5</color>
     <color name="darkTheme_colorAccent">#2196F3</color>
@@ -43,9 +49,4 @@
     <color name="classic_blackTheme_colorBackground">#000000</color>
     <color name="classic_blackTheme_colorTintedBackground">#303030</color>
 
-    <color name="splashBackground">#607d8b</color>
-
-    <color name="text_light">#ffffff</color>
-    <color name="text_dark">#000000</color>
-    <color name="tab_indicator">#ffffff</color>
 </resources>

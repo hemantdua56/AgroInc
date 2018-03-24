@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.hemant.agroinc.agroinc.WeatherFrag;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,12 +58,12 @@ public class MainFragment extends Fragment {
                 startActivity(i);
             }
         });
-        TextView chat = (TextView) rootView.findViewById(R.id.talkToExecutive);
+        TextView Weather = (TextView) rootView.findViewById(R.id.Weather);
 
-        settingTextView.setOnClickListener(new View.OnClickListener() {
+        Weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),CropInfo.class);
+                Intent i = new Intent(getActivity(),WeatherFrag.class);
                 startActivity(i);
             }
         });
