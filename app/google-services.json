@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "292343804302",
+    "firebase_url": "https://agroinc-7fe47.firebaseio.com",
+    "project_id": "agroinc-7fe47",
+    "storage_bucket": "agroinc-7fe47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292343804302:android:57ccd613af9f71bf",
+        "android_client_info": {
+          "package_name": "com.example.hemant.agroinc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292343804302-t0dh1s86hfl2p2ln10p2m8sge7af1g8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hemant.agroinc",
+            "certificate_hash": "e95a279dca8e85ee406f942bc10434e0085b9cf0"
+          }
+        },
+        {
+          "client_id": "292343804302-f6s7t6bm140n23kbusnjm56n9ih25nlq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGUwQNIRM0piWuATVM8rTHKMH-n0PMI6o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292343804302-f6s7t6bm140n23kbusnjm56n9ih25nlq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
