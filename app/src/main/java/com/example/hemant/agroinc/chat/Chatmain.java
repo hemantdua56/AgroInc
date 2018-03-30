@@ -4,9 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Chatmain extends Activity {
+public class Chatmain extends AppCompatActivity {
     private static final String TAG = Chatmain.class.getName();
 
     private EditText metText;
@@ -50,6 +55,7 @@ public class Chatmain extends Activity {
         //mRecyclerView.setItemAnimator(new SlideInOutLeftItemAnimator(mRecyclerView));
         mAdapter = new ChatAdapter(mChats, mId);
         mRecyclerView.setAdapter(mAdapter);
+
 
         /**
          * Firebase - Inicialize
@@ -146,4 +152,5 @@ public class Chatmain extends Activity {
 
         super.onBackPressed();
     }
+
 }

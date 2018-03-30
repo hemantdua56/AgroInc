@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hemant.agroinc.chat.Chatmain;
 import com.example.hemant.agroinc.weather.WeatherFrag;
 
 import java.util.ArrayList;
@@ -86,9 +87,21 @@ public class MainFragment extends Fragment {
             }
         });
 
+        Button Chat=(Button)rootView.findViewById(R.id.chat);
+        Chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getActivity(),Chatmain.class);
+                startActivity(i);
+            }
+        });
 
-
-
+        Button SeasonalForecaast=(Button)rootView.findViewById(R.id.seasonalForecast);
+        SeasonalForecaast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
 
 
 

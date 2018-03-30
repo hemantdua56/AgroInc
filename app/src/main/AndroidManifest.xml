@@ -118,5 +118,11 @@
 
         </activity>
         <activity android:name=".Fertilizer"></activity>
+        <activity android:name=".chat.Chatmain"
+            android:label="कार्यकारी अधिकारी से बातचीत"
+            android:theme="@style/AppTheme">
+
+
+        </activity>
     </application>
 </manifest>
