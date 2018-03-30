@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#F53</color>
+    <color name="colorPrimaryDark">#F53</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">@android:color/transparent</color>
     <color name="colorTintedBackground">#cdcdcd</color>
@@ -11,12 +11,20 @@
     <color name="text_dark">#000000</color>
     <color name="tab_indicator">#ffffff</color>
 
+    <color name="color_text_info">#d5d1ac</color>
 
     <color name="refresh">#008000</color>
     <color name="refresh1">#008080</color>
     <color name="refresh2">#800080</color>
 
-
+    <color name="colorAccent1">#4fa881</color>
+    <color name="colorIndivateTab">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorCardView">#f7f7f7</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_500">#a4a4a4</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_800">#212121</color>
 
 
     <color name="darkTheme_colorPrimary">#2196F3</color>

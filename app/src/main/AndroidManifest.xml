@@ -11,13 +11,19 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
+
+
         <activity android:name=".SuperMainActivity" />
         <activity
             android:name=".AgricultureLib"
@@ -31,28 +37,86 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
+        <receiver android:name=".weather.ExtensiveWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/extensive_widget" />
+        </receiver>
+        <receiver android:name=".weather.TimeWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/time_widget" />
+        </receiver>
+        <receiver android:name=".weather.SimpleWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/simple_widget" />
+        </receiver>
+
+        <service
+            android:name=".weather.DashClockWeatherExtension"
+            android:icon="@drawable/ic_cloud_white_24dp"
+            android:label="@string/app_name"
+            android:permission="com.google.android.apps.dashclock.permission.READ_EXTENSION_DATA">
+            <intent-filter>
+                <action android:name="com.google.android.apps.dashclock.Extension" />
+            </intent-filter>
+
+            <meta-data
+                android:name="protocolVersion"
+                android:value="2" />
+            <meta-data
+                android:name="worldReadable"
+                android:value="true" />
+            <meta-data
+                android:name="settingsActivity"
+                android:value=".ExampleSettingsActivity" />
+        </service>
+
+        <receiver android:name=".weather.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".SettingActivity" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".login.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/TranslucentBackground">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".login.RegisterActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Translucent"></activity>
+
         <activity
             android:name=".CropInfo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-        <activity android:name=".agroinc.WeatherFrag"
+        <activity android:name=".weather.WeatherFrag"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+        <activity android:name=".Fertilizer"></activity>
     </application>
 </manifest>
