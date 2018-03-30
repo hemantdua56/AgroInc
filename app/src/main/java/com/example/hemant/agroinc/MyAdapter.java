@@ -2,6 +2,7 @@ package com.example.hemant.agroinc;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i=new Intent(view.getContext(),SensorResults.class);
+                    i.putExtra("cropName",title.getText().toString());
+                    view.getContext().startActivity(i);
+                }
+            });
 
 
         }
@@ -48,8 +57,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_agri, parent, false);
+        final View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_agrih, parent, false);
+
 
         return new MyViewHolder(itemView);
     }

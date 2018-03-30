@@ -1,187 +1,91 @@
 package com.example.hemant.agroinc;
 
-import android.app.SearchManager;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AgricultureLib extends AppCompatActivity {
-    private RecyclerView recyclerView1;
-    private MyAdapter adapter;
-    private List<CropDetails> cropList;
-    private SearchView searchView;
-
+    private ArrayList<SectionDataModel> allSampleData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agriculture_lib);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        // toolbar fancy stuff
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.toolbar_title);
+        allSampleData = new ArrayList<>();
 
-        recyclerView1 = (RecyclerView)findViewById(R.id.recycler_view2);
-        whiteNotificationBar(recyclerView1);
-        cropList = new ArrayList<>();
-        adapter = new MyAdapter(this, cropList);
+        createDummyData();
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
-        recyclerView1.setLayoutManager(mLayoutManager);
-      //  recyclerView1.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-        recyclerView1.setItemAnimator(new DefaultItemAnimator());
-        recyclerView1.setAdapter(adapter);
-
-        prepareCrop();
-
-
-
-
-
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView.setHasFixedSize(true);
+        RecyclerViewDataAdapter adapter = new RecyclerViewDataAdapter(allSampleData, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(adapter);
     }
-    private void prepareCrop() {
-        int[] covers = new int[]{
-                R.drawable.wheat,
-                R.drawable.legumes,
-                R.drawable.apples,
-                R.drawable.pears,
-                R.drawable.mango,
-                R.drawable.tomato,
-                R.drawable.rice,
-                R.drawable.cotton,
-                R.drawable.chilli,
-                R.drawable.potato,
-                R.drawable.paddy,
-                R.drawable.onion
-              };
+    private void createDummyData() {
 
-        CropDetails a = new CropDetails("Wheat\n" +
-                "गेहूँ", covers[0]);
-        cropList.add(a);
-        a = new CropDetails("Legumes\n" +
-                "फलियां", covers[1]);
-        cropList.add(a);
+            ArrayList<SingleItemModel> singleItemModelPulses = new ArrayList<>();
 
-        a = new CropDetails("Apple\n" +
-                "सेब", covers[2]);
-        cropList.add(a);
+            singleItemModelPulses.add(new SingleItemModel("gram", "6-9","Winter/Rainy Season","-","Used when nutrients are low","All Soil Types",R.drawable.gram));
+            singleItemModelPulses.add(new SingleItemModel("red-gram", "5-7","-","30-35 C","moisture","All",R.drawable.redgram));
+            singleItemModelPulses.add(new SingleItemModel("moong", "b","c","d","E","f6",R.drawable.album2));
+            singleItemModelPulses.add(new SingleItemModel("masar", "b","c","d","E","f6",R.drawable.album2));
+            singleItemModelPulses.add(new SingleItemModel("beans", "b","c","d","E","f6",R.drawable.album2));
 
-        a = new CropDetails("Pears\n"+"रहिला", covers[3]);
-        cropList.add(a);
+            ArrayList<SingleItemModel> singleItemModelFruits = new ArrayList<>();
+            singleItemModelFruits.add(new SingleItemModel("banana", "6-7.5","June-September","15-35 C","Nitrogen, Potassium, Phosphorous","Loamy Soil",R.drawable.bana));
+            singleItemModelFruits.add(new SingleItemModel("tomatoh", "6-7","August~September","20-30 C","Potassium, Moisture","Sandy Loamy",R.drawable.tomato));
+            singleItemModelFruits.add(new SingleItemModel("apple", "b","c","d","E","f6",R.drawable.album2));
+            singleItemModelFruits.add(new SingleItemModel("orange", "b","c","d","E","f6",R.drawable.album2));
+            singleItemModelFruits.add(new SingleItemModel("papaya", "6-7.5","c","d","E","f6",R.drawable.album2));
 
+        ArrayList<SingleItemModel> singleItemModelCereals = new ArrayList<>();
+        singleItemModelCereals.add(new SingleItemModel("wheath", "6-8","November~December","20-25 C","Nitrogen, Potassium, Phosphorous","Clay Loamy",R.drawable.wheat));
+        singleItemModelCereals.add(new SingleItemModel("rice", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelCereals.add(new SingleItemModel("maize", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelCereals.add(new SingleItemModel("barley", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelCereals.add(new SingleItemModel("millet", "6-7.5","c","d","E","f6",R.drawable.album2));
 
-        a = new CropDetails("Mango\n" + "आम", covers[4]);
-        cropList.add(a);
-        a = new CropDetails("Tomato\n" +
-                "टमाटर", covers[5]);
-        cropList.add(a);
-        a = new CropDetails("Rice\n" +
-                "चावल", covers[6]);
-        cropList.add(a);
-        a = new CropDetails("Cotton\n" +
-                "कपास", covers[7]);
-        cropList.add(a);
-        a = new CropDetails("Chilli\n" +
-                "मिर्च", covers[8]);
-        cropList.add(a);
-        a = new CropDetails("Potato\n" +
-                "आलू", covers[9]);
-        cropList.add(a);
-        a = new CropDetails("Paddy\n" + "धान", covers[10]);
-        cropList.add(a);
+        ArrayList<SingleItemModel> singleItemModelVegetables = new ArrayList<>();
+        singleItemModelVegetables.add(new SingleItemModel("peas", "6.5~7.5","November~Februray","13-18 C","Phosphorous, Potassium","-",R.drawable.peas));
+        singleItemModelVegetables.add(new SingleItemModel("onionh", "6-7.5","November~December","15-25 C","Potassium, Moisture","light Soil",R.drawable.onion));
+        singleItemModelVegetables.add(new SingleItemModel("potato", "5-6.5","October-November","15-25 C","Phosphorous, Potassium","All",R.drawable.potatoes));
+        singleItemModelVegetables.add(new SingleItemModel("ladyfinger", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelVegetables.add(new SingleItemModel("brinjal", "6-7.5","c","d","E","f6",R.drawable.album2));
 
-        a = new CropDetails("Onion\n"+"प्याज", covers[11]);
-        cropList.add(a);
-        adapter.notifyDataSetChanged();
-    }
+        ArrayList<SingleItemModel> singleItemModelSpecies = new ArrayList<>();
+        singleItemModelSpecies.add(new SingleItemModel("chilli", "6.5-7.5","Rainy~Summer Season","15-30 C","Balanced Nitrogen, Phosphorous, Potassium","Sandy or Light Loamy Soil",R.drawable.paprika));
+        singleItemModelSpecies.add(new SingleItemModel("garlic", "6-8","October~November","25~35 C","Balanced Nitrogen, Phosphorous, Potassium + Moisture","light Moisturized Soil",R.drawable.garlic));
+        singleItemModelSpecies.add(new SingleItemModel("ginger", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelSpecies.add(new SingleItemModel("cinnamon", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelSpecies.add(new SingleItemModel("turmeric", "6-7.5","c","d","E","f6",R.drawable.album2));
 
-    /**
-     * RecyclerView item decoration - give equal margin around grid item
-     */
+        ArrayList<SingleItemModel> singleItemModelFibre = new ArrayList<>();
+        singleItemModelFibre.add(new SingleItemModel("cottonh", "-","-","-","Balanced Nitrogen, Phosphorous, Potassium","Well Drained and deep soil",R.drawable.cotton));
+        singleItemModelFibre.add(new SingleItemModel("sugarcane", "6.5-7.5","June~August","24-30 C","Potassium, Moisture","Loamy",R.drawable.sugarcane));
+        singleItemModelFibre.add(new SingleItemModel("jute", "b","c","d","E","f6",R.drawable.sugarcane));
+        singleItemModelFibre.add(new SingleItemModel("tobacco", "b","c","d","E","f6",R.drawable.album2));
+        singleItemModelFibre.add(new SingleItemModel("bamboo", "6-7.5","c","d","E","f6",R.drawable.album2));
 
 
+        SectionDataModel [] dm= new SectionDataModel[6];
+
+             dm[0]= new SectionDataModel("pulses",singleItemModelPulses);
+            dm[1]=new SectionDataModel("fruits",singleItemModelFruits);
+            dm[2]=new SectionDataModel("cereals",singleItemModelCereals);
+            dm[3]=new SectionDataModel("vegetables",singleItemModelVegetables);
+            dm[4]=new SectionDataModel("spices",singleItemModelSpecies);
+            dm[5]=new SectionDataModel("fibre",singleItemModelFibre);
+
+        allSampleData.add(dm[0]);
+            allSampleData.add(dm[1]);
+            allSampleData.add(dm[2]);
+            allSampleData.add(dm[3]);
+            allSampleData.add(dm[4]);
+            allSampleData.add(dm[5]);
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        // Associate searchable configuration with the SearchView
-        SearchManager searchManager = (SearchManager) getSystemService(AgricultureLib.SEARCH_SERVICE);
-        searchView = (SearchView) menu.findItem(R.id.action_search)
-                .getActionView();
-        searchView.setSearchableInfo(searchManager
-                .getSearchableInfo(getComponentName()));
-        searchView.setMaxWidth(Integer.MAX_VALUE);
-
-        // listening to search query text change
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                // filter recycler view when query submitted
-                adapter.getFilter().filter(query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                // filter recycler view when text is changed
-                adapter.getFilter().filter(query);
-                return false;
-            }
-        });
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        // close search view on back button pressed
-        if (getFragmentManager().getBackStackEntryCount() > 0) {
-            getFragmentManager().popBackStack();
-        } else {
-
-            super.onBackPressed();
-    }}
-
-    private void whiteNotificationBar(View view) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            int flags = view.getSystemUiVisibility();
-            flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-            view.setSystemUiVisibility(flags);
-            getWindow().setStatusBarColor(Color.WHITE);
-        }
     }
 }
-
-
-
-
-

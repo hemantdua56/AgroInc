@@ -44,13 +44,12 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_main, container, false);
 
-        Button CropInformation = (Button) rootView.findViewById(R.id.cropInformation);
+       Button CropInformation = (Button) rootView.findViewById(R.id.cropInformation);
 
         CropInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(),AgricultureLib.class);
-
                 startActivity(i);
             }
         });
@@ -66,12 +65,12 @@ public class MainFragment extends Fragment {
             }
         });
 
-        Button Pesticide = (Button) rootView.findViewById(R.id.pesticide);
+  /*      Button Pesticide = (Button) rootView.findViewById(R.id.pesticide);
 
         Pesticide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),AgricultureLib.class);
+                Intent i = new Intent(getActivity(),AgricultureLibrary.class);
 
                 startActivity(i);
             }
@@ -81,12 +80,12 @@ public class MainFragment extends Fragment {
         Fertilzer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),AgricultureLib.class);
+                Intent i = new Intent(getActivity(),AgricultureLibrary.class);
 
                 startActivity(i);
             }
         });
-
+*/
         Button Chat=(Button)rootView.findViewById(R.id.chat);
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,13 +95,13 @@ public class MainFragment extends Fragment {
             }
         });
 
-        Button SeasonalForecaast=(Button)rootView.findViewById(R.id.seasonalForecast);
+    /*    Button SeasonalForecaast=(Button)rootView.findViewById(R.id.seasonalForecast);
         SeasonalForecaast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
         });
-
+*/
 
 
         for (int i = 0; i < XMEN.length; i++)

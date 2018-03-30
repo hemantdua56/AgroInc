@@ -17,20 +17,16 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CropInfo extends AppCompatActivity {
+public class AgricultureLibrary extends AppCompatActivity {
     private RecyclerView recyclerView1;
     private MyAdapter adapter;
     private List<CropDetails> cropList;
     private SearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crop_info);
-
-
-
-
-
+        setContentView(R.layout.activity_agriculture_library);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -45,7 +41,7 @@ public class CropInfo extends AppCompatActivity {
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView1.setLayoutManager(mLayoutManager);
-        //  recyclerView1.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+      //  recyclerView1.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView1.setItemAnimator(new DefaultItemAnimator());
         recyclerView1.setAdapter(adapter);
 
@@ -58,19 +54,57 @@ public class CropInfo extends AppCompatActivity {
     }
     private void prepareCrop() {
         int[] covers = new int[]{
-                R.drawable.mustard,
                 R.drawable.wheath,
-                R.drawable.cottonh
-        };
+                R.drawable.legumes,
+                R.drawable.apples,
+                R.drawable.pears,
+                R.drawable.mango,
+                R.drawable.tomatoh,
+                R.drawable.rice,
+                R.drawable.cottonh,
+                R.drawable.chilli,
+                R.drawable.potato,
+                R.drawable.paddy,
+                R.drawable.onionh
+              };
 
-        CropDetails a = new CropDetails("Mustard", covers[0]);
+        CropDetails a = new CropDetails("Wheat\n" +
+                "गेहूँ", covers[0]);
         cropList.add(a);
-        a = new CropDetails("Wheat", covers[1]);
+        a = new CropDetails("Legumes\n" +
+                "फलियां", covers[1]);
         cropList.add(a);
 
-        a = new CropDetails("Cotton", covers[2]);
+        a = new CropDetails("Apple\n" +
+                "सेब", covers[2]);
         cropList.add(a);
 
+        a = new CropDetails("Pears\n"+"रहिला", covers[3]);
+        cropList.add(a);
+
+
+        a = new CropDetails("Mango\n" + "आम", covers[4]);
+        cropList.add(a);
+        a = new CropDetails("Tomato\n" +
+                "टमाटर", covers[5]);
+        cropList.add(a);
+        a = new CropDetails("Rice\n" +
+                "चावल", covers[6]);
+        cropList.add(a);
+        a = new CropDetails("Cotton\n" +
+                "कपास", covers[7]);
+        cropList.add(a);
+        a = new CropDetails("Chilli\n" +
+                "मिर्च", covers[8]);
+        cropList.add(a);
+        a = new CropDetails("Potato\n" +
+                "आलू", covers[9]);
+        cropList.add(a);
+        a = new CropDetails("Paddy\n" + "धान", covers[10]);
+        cropList.add(a);
+
+        a = new CropDetails("Onion\n"+"प्याज", covers[11]);
+        cropList.add(a);
         adapter.notifyDataSetChanged();
     }
 
@@ -135,7 +169,7 @@ public class CropInfo extends AppCompatActivity {
         } else {
 
             super.onBackPressed();
-        }}
+    }}
 
     private void whiteNotificationBar(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

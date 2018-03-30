@@ -14,6 +14,7 @@
         <item name="android:textColorSecondary">#F54324</item>
 
     </style>
+
     <style name="AppTheme.PopupOverlay" parent="AppTheme.PopupOverlay">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -21,6 +22,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
     <style name="author" parent="Base.TextAppearance.AppCompat.Small">
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:layout_marginLeft">16dp</item>
@@ -37,6 +39,7 @@
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:layout_marginRight">16dp</item>
     </style>
+
     <style name="title" parent="Base.TextAppearance.AppCompat.Large">
         <item name="android:layout_marginBottom">8dp</item>
         <item name="android:layout_marginTop">16dp</item>
@@ -44,6 +47,7 @@
         <item name="android:layout_marginRight">16dp</item>
 
     </style>
+
     <style name="Translucent" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#03A9F4</item>
@@ -52,6 +56,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
     <style name="TranslucentBackground" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowNoTitle">true</item>
         <item name="colorPrimary">#03A9F4</item>
@@ -59,27 +64,22 @@
         <item name="colorAccent">#4fa881</item>
         <item name="android:windowBackground">@drawable/bg</item>
     </style>
+
     <style name="TextLabel" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
         <item name="colorControlActivated">#FFCC00</item>
     </style>
 
-    <style name="button_text" >
-        <item name="android:textColor" >#ffffff</item>
-        <item name="android:gravity" >center</item>
-        <item name="android:shadowColor" >#000000</item>
-        <item name="android:textStyle" >bold</item>
-        <item name="android:shadowDx" >1</item>
-        <item name="android:shadowDy" >1</item>
+    <style name="button_text">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
 
-        <item name="android:shadowRadius" >2</item>
+        <item name="android:shadowRadius">2</item>
     </style>
-
-
-
-
-
-
 
 
     <style name="AppTheme.Dark" parent="Theme.AppCompat">
@@ -127,7 +127,6 @@
     <style name="AppTheme.NoStatusBar" parent="AppTheme.NoActionBar"></style>
 
 
-
     <style name="AppTheme.NoActionBar.Classic" parent="AppTheme.Classic">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -152,6 +151,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

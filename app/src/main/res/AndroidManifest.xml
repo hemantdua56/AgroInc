@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SuperMainActivity" />
         <activity
-            android:name=".AgricultureLib"
+            android:name=".AgricultureLibrary"
             android:label="Agricultre Library"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
