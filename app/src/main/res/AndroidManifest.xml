@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CropInfo"
+            android:name=".DiseaseDetection"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name="com.example.hemant.chatagri.Chat">
 

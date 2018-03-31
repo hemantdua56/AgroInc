@@ -1,9 +1,18 @@
 package com.example.hemant.agroinc.chat;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.hemant.agroinc.R;
@@ -32,6 +41,7 @@ class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public ChatAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
 
+
         if (viewType == CHAT_END) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_chat_end, parent, false);
         } else {
@@ -54,6 +64,7 @@ class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         Chat chat = mDataSet.get(position);
         holder.mTextView.setText(chat.getMessage());
+
     }
 
     @Override
@@ -70,6 +81,8 @@ class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         ViewHolder(View v) {
             super(v);
             mTextView = (TextView) itemView.findViewById(R.id.tvMessage);
+
+
         }
     }
 }

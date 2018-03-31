@@ -53,12 +53,13 @@
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/crop_info"
+                    android:background="@drawable/croppediaa"
                     android:elevation="40dp"
-                    android:text="CROP INFORMATION\n फसल की जानकारी"
+                    android:text="CROPPedia\n फसल की जानकारी"
                     android:textAlignment="center"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
 
                 <Button
                     android:id="@+id/Weather"
@@ -66,11 +67,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/weather"
                     android:elevation="20dp"
                     android:text="Weather\nमौसम "
-                    android:textSize="13dp" />
+                    android:textSize="12dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -85,12 +87,13 @@
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/pesticide_forecast"
+                    android:background="@drawable/current_soil_conditions"
                     android:elevation="20dp"
-                    android:text="Seasonal pest Forecast\nऋतु के अनुसार कीट का पूर्वानुमान "
+                    android:text="Current Soil Conditions\nवर्तमान मिट्टी की अवस्था"
                     android:textAlignment="center"
-                    android:textSize="13dp" />
+                    android:textSize="12dp" />
 
                 <Button
                     android:id="@+id/chat"
@@ -98,11 +101,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/chat"
                     android:elevation="20dp"
                     android:text="Chat with Executive\nकार्यकारी अधिकारी से बातचीत "
-                    android:textSize="13dp"
+                    android:textSize="12dp"
                     android:translationZ="2dp" />
             </LinearLayout>
 
@@ -118,11 +122,12 @@
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/fertilizer"
+                    android:background="@drawable/fertilizer1"
                     android:elevation="20dp"
-                    android:text="Required Fertilizers\nअपेक्षित उर्वरक"
-                    android:textSize="13dp" />
+                    android:text="Recommended  Fertilizers \nफ़सल के लिये उर्वरक का सुझाव "
+                    android:textSize="12dp" />
 
                 <Button
                     android:id="@+id/pesticide"
@@ -130,13 +135,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginRight="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/pesticide"
-                    android:text="Pesticide Forecast and Advisory\nकीटनाशक का पूर्वानुमान तथा सलाह"
-                    android:textSize="10sp" />
+                    android:background="@drawable/leafdisease"
+                    android:text="Disease Detection\nरोग की खोज"
+                    android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 
+    </ScrollView>
 
 </android.support.v7.widget.LinearLayoutCompat>

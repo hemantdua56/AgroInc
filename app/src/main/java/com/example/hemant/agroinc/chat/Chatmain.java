@@ -1,10 +1,17 @@
 package com.example.hemant.agroinc.chat;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,15 +38,14 @@ public class Chatmain extends AppCompatActivity {
     private static final String TAG = Chatmain.class.getName();
 
     private EditText metText;
-    private Button mbtSent;
+    private Button mbtSent,call;
     private DatabaseReference mFirebaseRef;
-
+    private FloatingActionButton fab;
     private List<Chat> mChats;
     private RecyclerView mRecyclerView;
     private ChatAdapter mAdapter;
     private String mId;
 
-    @SuppressLint("HardwareIds")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +61,7 @@ public class Chatmain extends AppCompatActivity {
         //mRecyclerView.setItemAnimator(new SlideInOutLeftItemAnimator(mRecyclerView));
         mAdapter = new ChatAdapter(mChats, mId);
         mRecyclerView.setAdapter(mAdapter);
+
 
 
         /**
@@ -144,6 +151,11 @@ public class Chatmain extends AppCompatActivity {
                 Log.d(TAG, databaseError.getMessage());
             }
         });
+
+
+
+
+
     }
 
 

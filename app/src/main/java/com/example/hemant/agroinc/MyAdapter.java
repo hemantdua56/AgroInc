@@ -24,16 +24,21 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> implements Filterable {
     private Context mContext;
-    private List<CropDetails> cropList;
+    public List<CropDetails> cropList;
     private List<CropDetails> cropListFiltered;
     private CropAdapterListener listener;
+    private CropDetails cropDetails;
+
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+
         public TextView title;
+
         public ImageView thumbnail;
+
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
@@ -43,9 +48,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
                 public void onClick(View view) {
                     Intent i=new Intent(view.getContext(),SensorResults.class);
                     i.putExtra("cropName",title.getText().toString());
+
                     view.getContext().startActivity(i);
                 }
             });
+
 
 
         }
@@ -69,9 +76,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
         CropDetails crop = cropList.get(position);
         holder.title.setText(crop.getName());
 
-
         // loading album cover using Glide library
         Glide.with(mContext).load(crop.getThumbnail()).into(holder.thumbnail);
+
     }
 
 

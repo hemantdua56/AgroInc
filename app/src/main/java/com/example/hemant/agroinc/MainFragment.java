@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.hemant.agroinc.chat.Chatmain;
+import com.example.hemant.agroinc.cropInformation.AgricultureLib;
 import com.example.hemant.agroinc.weather.WeatherFrag;
 
 import java.util.ArrayList;
@@ -65,12 +64,12 @@ public class MainFragment extends Fragment {
             }
         });
 
-  /*      Button Pesticide = (Button) rootView.findViewById(R.id.pesticide);
+        Button Pesticide = (Button) rootView.findViewById(R.id.pesticide);
 
         Pesticide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),AgricultureLibrary.class);
+                Intent i = new Intent(getActivity(),DiseaseDetection.class);
 
                 startActivity(i);
             }
@@ -85,7 +84,7 @@ public class MainFragment extends Fragment {
                 startActivity(i);
             }
         });
-*/
+
         Button Chat=(Button)rootView.findViewById(R.id.chat);
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,13 +94,15 @@ public class MainFragment extends Fragment {
             }
         });
 
-    /*    Button SeasonalForecaast=(Button)rootView.findViewById(R.id.seasonalForecast);
+        Button SeasonalForecaast=(Button)rootView.findViewById(R.id.seasonalForecast);
         SeasonalForecaast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i=new Intent(getActivity(),Fertilizer.class);
+                startActivity(i);
             }
         });
-*/
+
 
 
         for (int i = 0; i < XMEN.length; i++)
